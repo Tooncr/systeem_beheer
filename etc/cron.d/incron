@@ -1,0 +1,2 @@
+*/15 * * * * root /bin/bash /etc/scripts/incron_config.sh
+*/15 * * * * root find /etc/mrt/* -maxdepth 0 -mmin +240 -exec rm -rf>
