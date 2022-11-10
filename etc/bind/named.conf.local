@@ -6,3 +6,10 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
+
+zone "toon-croonenberghs.sb.uclllabs.be" {
+	type master;
+	file "/etc/bind/toon-croonenberghs.sb.uclllabs.be";
+	allow-query { any; };
+	allow-transfer {193.191.177.254; };
+};
