@@ -9,7 +9,7 @@
 
 zone "toon-croonenberghs.sb.uclllabs.be" {
 	type master;
-	file "/etc/bind/toon-croonenberghs.sb.uclllabs.be";
+	file "/etc/bind/db.toon-croonenberghs.sb.uclllabs.be";
 	allow-query { any; };
 	allow-transfer {193.191.177.254; };
 };
