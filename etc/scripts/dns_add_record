@@ -1,1 +1,16 @@
 #!/bin/bash
+if [ -n "$1"]; then
+	if[[ $1 = "-t" ]]; then
+		case $2 in
+			A)
+				printf "to do"
+			MX)
+				printf "to do"
+			CNAME)
+				printf "to do"
+		esac
+	else
+	printf "to do"
+else
+	printf "no right arguments"
+fi
