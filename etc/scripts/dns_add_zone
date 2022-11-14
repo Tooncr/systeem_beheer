@@ -1,7 +1,7 @@
 #! /bin/bash
 
 if [ -n "$1" ]; then
-	echo"\$TTL	300
+	echo "\$TTL	300
 @	IN	SOA	ns.toon-croonenberghs.sb.uclllabs.be $1.toon-croonenberghs.sb.uclllabs.be.(
 			700	; Serial
 			300	; Refresh
