@@ -21,9 +21,9 @@ zone \"$1.toon-croonenberghs.sb.uclllabs.be\"{
 
 echo -e "$1	IN	NS	ns.toon-croonenberghs.sb.uclllabs.be." >> /etc/bind/db.toon-croonenberghs.sb.uclllabs.be
 SERIAL_NUM=$(grep -Po '\d+(?=\s+; Serial)' /etc/bind/db.toon-croonenberghs.sb.uclllabs.be)
-SERIAL_LIN=$(grep -Po '\s+; Serial' /etc/bind/db.toon-croonenberghs.sb.uclllabs.be)
+SERIAL_LIN=$(grep -Po '\s+; Serial' /etc/bind/db.toon-croonenberghs.sb.uclllabs.be)x
 SERIAL_ALL=$(grep -Po '\d+\s+; Serial' /etc/bind/db.toon-croonenberghs.sb.uclllabs.be)
-NEW_NUM=$(("$$SERIAL_NUM" + 1))
+NEW_NUM=$(("$SERIAL_NUM" + 1))
 sed -i "s/$SERIAL_ALL/$NEW_NUM$SERIAL_LIN/g" /etc/bind/db.toon-croonenberghs.sb.uclllabs.be
 
 systemctl restart bind9
