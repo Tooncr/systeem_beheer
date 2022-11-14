@@ -28,3 +28,6 @@ sed -i "s/$SERIAL_ALL/$NEW_NUM$SERIAL_LIN/g" /etc/bind/db.toon-croonenberghs.sb.
 
 systemctl restart bind9
 
+else
+	echo "no string"
+fi
