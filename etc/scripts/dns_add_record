@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ -n "$1"]; then
-	if[[ $1 = "-t" ]]; then
+if [ -n "$1" ]; then
+	if [[ $1 = "-t" ]]; then
 		case $2 in
 			A)
 				printf "\n$3	IN	A	$4\n" >>	/etc/bind/zones/db."$5"
