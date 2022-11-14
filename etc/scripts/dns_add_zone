@@ -11,11 +11,11 @@ if [ -n "$1" ]; then
 ; A records for name servers
 @	IN	NS	ns.toon-croonenberghs.sb.uclllabs.be.
 ns	IN	A	193.191.177.229
-@	IN	A	193.191.177.229" > /etc/bind/zones/$1.toon-croonenberghs.sb.uclllabs.be
+@	IN	A	193.191.177.229" > /etc/bind/zones/db.$1.toon-croonenberghs.sb.uclllabs.be
 echo -e "
-zone \"$1.toon-croonenberghs.sb.uclllabs.be\"{
+zone \"db.$1.toon-croonenberghs.sb.uclllabs.be\"{
 	type master;
-	file \"/etc/bind/zones/$1.toon-croonenberghs.sb.uclllabs.be\";
+	file \"/etc/bind/zones/db.$1.toon-croonenberghs.sb.uclllabs.be\";
 	notify yes;
 };" >> /etc/bind/named.conf.local
 
@@ -27,6 +27,7 @@ NEW_NUM=$(("$SERIAL_NUM" + 1))
 sed -i "s/$SERIAL_ALL/$NEW_NUM$SERIAL_LIN/g" /etc/bind/db.toon-croonenberghs.sb.uclllabs.be
 
 systemctl restart bind9
+
 
 else
 	echo "no string"
