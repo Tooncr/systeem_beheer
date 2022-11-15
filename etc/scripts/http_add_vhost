@@ -1,1 +1,8 @@
 #!/bin/bash
+ZONE=$(grep -Po '.{1,}(?=.toon-croonenberghs.sb.uclllabs.be)' <<< "$1")
+
+if	[ -n "$ZONE" ]; then
+	
+else
+	printf "$ZONE incorrect domain name"
+fi
