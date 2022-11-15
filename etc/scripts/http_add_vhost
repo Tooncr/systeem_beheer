@@ -5,7 +5,17 @@ if	[ -n "$ZONE" ]; then
 	
 	FIND=$(grep -P "$ZONE" /etc/bind/db.toon-croonenberghs.sb.uclllabs.be | wc -l)
 	if ["$FIND" -gt 0 ]; then
-	
+		echo -e "<VirtualHost *:80>
+		ServerName $1
+		DocumentRoot /var/www/toon/$ZONE
+		ErrorLog \${APACHE_LOG_DIR}/$ZONE.log
+		CustomLog \${APACHE_LOG_DIR}/$ZONE.log	combined
+		</VirtualHost>" >> /etc/apache2/sites-available/$ZONE.conf
+
+		mkdir /var/www/toon/$ZONE
+		printf "welcome $ZONE" > /var/www/toon/$ZONE/index.html
+		a2ensite $ZONE.conf
+		systemctl restart apache2
 	else
 		printf "Subdomain doesnt exist"
 	fi
