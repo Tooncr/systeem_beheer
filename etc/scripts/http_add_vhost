@@ -3,6 +3,12 @@ ZONE=$(grep -Po '.{1,}(?=.toon-croonenberghs.sb.uclllabs.be)' <<< "$1")
 
 if	[ -n "$ZONE" ]; then
 	
+	FIND=$(grep -P "$ZONE" /etc/bind/db.toon-croonenberghs.sb.uclllabs.be | wc -l)
+	if ["$FIND" -gt 0 ]; then
+	
+	else
+		printf "Subdomain doesnt exist"
+	fi
 else
 	printf "$ZONE incorrect domain name"
 fi
