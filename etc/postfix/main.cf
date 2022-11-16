@@ -13,7 +13,7 @@ alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 mydestination = $myhostname, localhost.$mydomain, localhost
 relayhost = 
-mynetworks = 127.0.0.0/8
+mynetworks = 10/8 172.16/12 192.168/16
 inet_interfaces = loopback-only
 recipient_delimiter = +
 
